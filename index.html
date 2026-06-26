@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <title>Gyanam Academy | Premier Computer Institute</title>
+    <!-- Google Fonts for Modern & Stylish Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Global & Reset Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            color: #1f2937;
+            background-color: #f1f5f9;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* Top Notification Bar */
+        .top-bar {
+            background: #dc2626;
+            color: #ffffff;
+            text-align: center;
+            padding: 8px 10px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+        /* Made Logo Brand Title Significantly Bigger */
+        .logo h1 {
+            color: #1e3a8a;
+            font-size: 32px; /* Increased from 26px */
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            color: #6b7280;
+            font-size: 11px;
+            display: block;
+            font-weight: 600;
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+        nav ul li a {
+            font-weight: 600;
+            color: #4b5563;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover { color: #1e3a8a; }
+        
+        .btn-enroll {
+            background: #1e3a8a;
+            color: #ffffff !important;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(30, 58, 138, 0.2);
+            transition: all 0.3s ease;
+        }
+        .btn-enroll:hover {
+            background: #0f172a;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Premium Banner */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #070b14 100%);
+            color: #ffffff;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
+        .hero-content { max-width: 850px; margin: 0 auto; }
+        .hero h2 {
+            font-size: 46px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 19px;
+            margin-bottom: 35px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+        }
+        .stat-item h3 {
+            font-size: 40px;
+            color: #f87171;
+            font-weight: 800;
+        }
+        .stat-item p { font-size: 14px; opacity: 0.8; }
+
+        /* Trust Badges Features */
+        .features {
+            max-width: 1200px;
+            margin: -50px auto 60px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            position: relative;
+            z-index: 10;
+        }
+        .feat-card {
+            background: #ffffff;
+            padding: 35px 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+            border-bottom: 5px solid #1e3a8a;
+            transition: transform 0.3s;
+        }
+        .feat-card:hover { transform: translateY(-5px); }
+        .feat-card h3 { margin-bottom: 12px; color: #1e3a8a; font-size: 20px; font-weight: 700; }
+        .feat-card p { color: #6b7280; font-size: 14px; }
+
+        /* Courses Grid Section */
+        .courses-section { max-width: 1200px; margin: 0 auto 80px; padding: 0 20px; }
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .course-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+        }
+        .course-badge {
+            background: #fee2e2;
+            color: #dc2626;
+            padding: 6px 16px;
+            font-size: 12px;
+            font-weight: 700;
+            align-self: flex-start;
+            margin: 25px 25px 0;
+            border-radius: 20px;
+        }
+        .course-body { padding: 25px; flex-grow: 1; }
+        .course-body h3 { color: #0f172a; margin-bottom: 12px; font-size: 22px; font-weight: 700; }
+        .course-body p { color: #4b5563; font-size: 14px; line-height: 1.6; }
+        .course-footer {
+            padding: 18px 25px;
+            background: #f8fafc;
+            border-top: 1px solid #edf2f7;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #4b5563;
+        }
+        .btn-details { color: #1e3a8a; font-weight: 700; }
+
+        /* Verification Interactive Portal */
+        .verification-section {
+            background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+            padding: 70px 20px;
+            text-align: center;
+        }
+        .verify-container { max-width: 600px; margin: 0 auto; background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .verify-container h3 { color: #1e3a8a; margin-bottom: 15px; font-size: 24px; font-weight: 700; }
+        .verify-container p { font-size: 14px; color: #6b7280; margin-bottom: 25px; }
+        .verify-form { display: flex; gap: 10px; margin-bottom: 20px; }
+        .verify-form input { flex-grow: 1; padding: 12px 15px; border: 2px solid #cbd5e1; border-radius: 6px; font-size: 15px; font-weight: 500; outline: none; }
+        .verify-form input:focus { border-color: #1e3a8a; }
+        .btn-verify { background: #1e3a8a; color: white; border: none; padding: 0 25px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: 0.3s; }
+        .btn-verify:hover { background: #0f172a; }
+        .result-box { margin-top: 20px; padding: 15px; border-radius: 6px; display: none; font-weight: 600; font-size: 15px; }
+        .result-success { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+        .result-fail { background: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
+
+        /* Contact & Enquiry Section Grid */
+        .contact-section { 
+            background: #ffffff; 
+            padding: 80px 20px; 
+        }
+        .contact-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 50px; 
+        }
+        .enquiry-form { 
+            background: #f8fafc; 
+            padding: 40px; 
+            border-radius: 12px; 
+            border: 1px solid #e2e8f0; 
+        }
+        .enquiry-form h3 { margin-bottom: 25px; color: #1e3a8a; font-weight: 700; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; color: #374151; }
+        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 15px; outline: none; background: #ffffff; }
+        .form-group input:focus, .form-group select:focus { border-color: #1e3a8a; box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.1); }
+        .btn-submit { width: 100%; background: #1e3a8a; color: white; padding: 14px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 16px; transition: background 0.3s; }
+        .btn-submit:hover { background: #0f172a; }
+        
+        /* Stylish Upgrade for Contact Info Block */
+        .contact-info { 
+            padding: 20px 10px; 
+        }
+        .contact-info h3 { color: #1e3a8a; margin-bottom: 20px; font-weight: 700; font-size: 26px; }
+        .contact-info p { margin-bottom: 20px; color: #4b5563; font-size: 15px; }
+        .contact-details-list { list-style: none; }
+        .contact-details-list li { 
+            margin-bottom: 18px; 
+            font-size: 16px; 
+            color: #1f2937; 
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .contact-details-list li span.icon {
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        /* Footer */
+        footer { background: #0f172a; color: #94a3b8; padding: 70px 20px 25px; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; border-bottom: 1px solid #334155; padding-bottom: 45px; }
+        .footer-col h4 { color: #ffffff; margin-bottom: 22px; font-size: 18px; font-weight: 700; }
+        .footer-col p { font-size: 14px; line-height: 1.7; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 12px; font-size: 14px; }
+        .footer-col ul li a:hover { color: #ffffff; }
+        .footer-bottom { text-align: center; padding-top: 25px; font-size: 14px; color: #64748b; }
+
+        /* Floating WhatsApp Button Widget */
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 9999;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .whatsapp-widget:hover { transform: scale(1.08); transition: transform 0.2s ease; }
+
+        /* Mobile View Adaptation */
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 15px; text-align: center; }
+            nav ul { flex-direction: column; gap: 12px; }
+            .hero h2 { font-size: 32px; }
+            .hero-stats { flex-direction: column; gap: 20px; }
+            .features { margin-top: 20px; }
+            .verify-form { flex-direction: column; }
+            .btn-verify { padding: 12px; border-radius: 6px; }
+            .contact-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dynamic Notification Sticky Header -->
+    <div class="top-bar">
+        ⚡ SPECIAL ADMISSION CAMPAIGN: GET 30% OFF ON ALL COMPUTER DIPLOMA COURSES FOR A LIMITED TIME!
+    </div>
+
+    <!-- Header Navigation Panel -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Gyanam Academy</h1> <!-- Made Bigger -->
+                <span>ISO 9001:2015 Certified & MSME Registered Institute</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#verification">Verify Certificate</a></li>
+                    <li><a href="#enquiry">Admission</a></li>
+                    <li><a href="#enquiry" class="btn-enroll">Enroll Online</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Premium Hero Branding Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Tihu's Leading Computer Training Academy</h2>
+            <p>Providing high-tier technical skills, modern lab infrastructures, and career-oriented government recognized diplomas to secure your professional edge.</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>1000+</h3>
+                    <p>Students Trained</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Practical Lab Classes</p>
+                </div>
+                <div class="stat-item">
+                    <h3>ISO 9001</h3>
+                    <p>Quality Standard</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Badges Pillars Section -->
+    <section class="features">
+        <div class="feat-card">
+            <h3>Government Recognized</h3>
+            <p>Our certificates are ISO 9001:2015 certified and valid for structural central and state employment verification frameworks.</p>
+        </div>
+        <div class="feat-card">
+            <h3>Advanced Infrastructure</h3>
+            <p>Dedicated 1:1 computer setups during operational practice slots ensuring maximum workstation execution time.</p>
+        </div>
+        <div class="feat-card">
+            <h3>Industry Core Curriculum</h3>
+            <p>Comprehensive syllabi updated regularly by certified computer network professionals and corporate IT faculty specialists.</p>
+        </div>
+    </section>
+
+    <!-- Standard Curricular Courses Component Grid -->
+    <section class="courses-section" id="courses">
+        <h2 class="section-title">Our Professional Programs</h2>
+        <div class="section-subtitle">Select from our range of government-compliant technical certifications</div>
+        <div class="course-grid">
+            
+            <!-- PGDCA -->
+            <div class="course-card">
+                <span class="course-badge">12 Months</span>
+                <div class="course-body">
+                    <h3>PGDCA</h3>
+                    <p>Post Graduate Diploma in Computer Application. In-depth analysis of structural programming, office integration suites, core DBMS, and computer networking schemas.</p>
+                </div>
+                <div class="course-footer">
+                    <span>Eligibility: Graduation</span>
+                    <a href="#enquiry" class="btn-details">Enquire →</a>
+                </div>
+            </div>
+
+            <!-- ADCA -->
+            <div class="course-card">
+                <span class="course-badge">12 Months</span>
+                <div class="course-body">
+                    <h3>ADCA</h3>
+                    <p>Advanced Diploma in Computer Application. Comprehensive modules covering workspace automation workflows, advanced layout architectures, and functional graphic programming.</p>
+                </div>
+                <div class="course-footer">
+                    <span>Eligibility: 10+2 Standard</span>
+                    <a href="#enquiry" class="btn-details">Enquire →</a>
+                </div>
+            </div>
+
+            <!-- DCA -->
+            <div class="course-card">
+                <span class="course-badge">6 Months</span>
+                <div class="course-body">
+                    <h3>DCA</h3>
+                    <p>Diploma in Computer Application. Perfect operational entry baseline covering components of operating systems, hardware fundamentals, text processing, and Internet systems.</p>
+                </div>
+                <div class="course-footer">
+                    <span>Eligibility: 10th Passed</span>
+                    <a href="#enquiry" class="btn-details">Enquire →</a>
+                </div>
+            </div>
+
+            <!-- Tally with GST -->
+            <div class="course-card">
+                <span class="course-badge">3 Months</span>
+                <div class="course-body">
+                    <h3>Tally with GST</h3>
+                    <p>Professional structural corporate ledger bookkeeping, transactional computation engines, dynamic inventory tracking controls, and real-time operational GST structures.</p>
+                </div>
+                <div class="course-footer">
+                    <span>Eligibility: Higher Secondary</span>
+                    <a href="#enquiry" class="btn-details">Enquire →</a>
+                </div>
+            </div>
+
+            <!-- DTP -->
+            <div class="course-card">
+                <span class="course-badge">3 Months</span>
+                <div class="course-body">
+                    <h3>DTP & Graphic Design</h3>
+                    <p>Master desktop layout engineering interfaces via localized page rendering tools, vectorial shape processing systems, and professional asset creation workspaces.</p>
+                </div>
+                <div class="course-footer">
+                    <span>Eligibility: 10th Passed</span>
+                    <a href="#enquiry" class="btn-details">Enquire →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Verification Engine Sandbox Component -->
+    <section class="verification-section" id="verification">
+        <div class="verify-container">
+            <h3>Online Student Verification</h3>
+            <p>Enter your unique registration or certification roll number to quickly parse and authenticate credentials on our institutional log databases.</p>
+            <div class="verify-form">
+                <input type="text" id="roll-input" placeholder="e.g., GA-2026-894">
+                <button class="btn-verify" onclick="checkCertificate()">Verify Status</button>
+            </div>
+            <div id="verify-result" class="result-box"></div>
+        </div>
+    </section>
+
+    <!-- Secure Local Intake & Enquiry Setup - CONVERTED TO ENGLISH & STYLISH ICONS -->
+    <section class="contact-section" id="enquiry">
+        <div class="contact-container">
+            <!-- Form Box Left -->
+            <div class="enquiry-form">
+                <h3>Admission & Career Counselling Intake</h3>
+                <form action="#" method="POST" autocomplete="off">
+                    <div class="form-group">
+                        <label for="name">Full Candidate Name</label>
+                        <input type="text" id="name" required placeholder="Enter candidate's full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Active Contact Number</label>
+                        <input type="tel" id="phone" pattern="[0-9]{10}" required placeholder="10-digit mobile line">
+                    </div>
+                    <div class="form-group">
+                        <label for="course">Desired Certification Stream</label>
+                        <select id="course" required>
+                            <option value="" disabled selected>Choose a structural stream</option>
+                            <option value="PGDCA">PGDCA (12 Months Diploma)</option>
+                            <option value="ADCA">ADCA (12 Months Advanced Course)</option>
+                            <option value="DCA">DCA (6 Months Basic Diploma)</option>
+                            <option value="Tally">Tally with GST (3 Months Specialist Module)</option>
+                            <option value="DTP">DTP & Graphic Design (3 Months Creative Course)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">Submit Enrolment Request Safely</button>
+                </form>
+            </div>
+            
+            <!-- Address Box Right (English and Stylish Upgrades) -->
+            <div class="contact-info">
+                <h3>Institutional Communication Desk</h3>
+                <p>You can securely confirm your batch allotment by visiting our campus helpdesk or directly contacting our support team via phone or email.</p>
+                <ul class="contact-details-list">
+                    <li>
+                        <span class="icon">📍</span>
+                        <div><strong>Address:</strong> Near Police Station, Tihu, Nalbari, Assam - 781371</div>
+                    </li>
+                    <li>
+                        <span class="icon">📞</span>
+                        <div><strong>Phone:</strong> +91 7637022068</div>
+                    </li>
+                    <li>
+                        <span class="icon">✉️</span>
+                        <div><strong>Email:</strong> info@gyanamacademy.com</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Corporate Footer Base Setup -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Gyanam Academy</h4>
+                <p>An institution driven to implement high-tier computer application frameworks and skill compliance education pathways throughout Nalbari districts.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Sitemap Routing</h4>
+                <ul>
+                    <li><a href="#">Home Base</a></li>
+                    <li><a href="#courses">Academic Courses</a></li>
+                    <li><a href="#verification">Database Verification</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Accreditation Standard</h4>
+                <p>Registered Entity with Ministry of Micro, Small & Medium Enterprises (MSME), Government of India. Quality systems benchmarked under global ISO 9001:2015 specifications.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Gyanam Academy. All Rights Reserved. Built for high performance.</p>
+        </div>
+    </footer>
+
+    <!-- Instant WhatsApp Messaging Interface Widget -->
+    <a href="https://wa.me/917637022068?text=Hello%20Gyanam%20Academy,%20I%20want%20to%20enquire%20about%20admissions." class="whatsapp-widget" target="_blank" rel="noopener noreferrer">
+        ✉
+    </a>
+
+    <!-- Verification Log Mock Scripts Execution Framework -->
+    <script>
+        function checkCertificate() {
+            var rollInput = document.getElementById('roll-input').value.trim();
+            var resultBox = document.getElementById('verify-result');
+            
+            if(rollInput === "") {
+                resultBox.className = "result-box result-fail";
+                resultBox.innerText = "Error: Input query field cannot be processed blank.";
+                resultBox.style.display = "block";
+                return;
+            }
+            
+            if(rollInput.toLowerCase() === "demo123" || rollInput.toUpperCase() === "GA-2026-894") {
+                resultBox.className = "result-box result-success";
+                resultBox.innerText = "✔ Record Validated: Student Status: Verified | Course Complete | Class Division: Excellent.";
+            } else {
+                resultBox.className = "result-box result-fail";
+                resultBox.innerText = "❌ Verification Failed: Provided credentials do not match active registry logs.";
+            }
+            resultBox.style.display = "block";
+        }
+    </script>
+</body>
+</html>
