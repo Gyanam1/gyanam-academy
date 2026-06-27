@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <title>Gyanam Academy | Premier Computer Institute</title>
-    <!-- Google Fonts for Modern & Stylish Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -52,10 +51,9 @@
             margin: 0 auto;
             padding: 15px 20px;
         }
-        /* Made Logo Brand Title Significantly Bigger */
         .logo h1 {
             color: #1e3a8a;
-            font-size: 32px; /* Increased from 26px */
+            font-size: 32px;
             font-weight: 800;
             line-height: 1.1;
             letter-spacing: -0.5px;
@@ -324,16 +322,14 @@
 </head>
 <body>
 
-    <!-- Dynamic Notification Sticky Header -->
     <div class="top-bar">
         ⚡ SPECIAL ADMISSION CAMPAIGN: GET 30% OFF ON ALL COMPUTER DIPLOMA COURSES FOR A LIMITED TIME!
     </div>
 
-    <!-- Header Navigation Panel -->
     <header>
         <div class="nav-container">
             <div class="logo">
-                <h1>Gyanam Academy</h1> <!-- Made Bigger -->
+                <h1>Gyanam Academy</h1>
                 <span>ISO 9001:2015 Certified & MSME Registered Institute</span>
             </div>
             <nav>
@@ -348,7 +344,6 @@
         </div>
     </header>
 
-    <!-- Premium Hero Branding Section -->
     <section class="hero">
         <div class="hero-content">
             <h2>Tihu's Leading Computer Training Academy</h2>
@@ -370,7 +365,6 @@
         </div>
     </section>
 
-    <!-- Core Badges Pillars Section -->
     <section class="features">
         <div class="feat-card">
             <h3>Government Recognized</h3>
@@ -386,13 +380,11 @@
         </div>
     </section>
 
-    <!-- Standard Curricular Courses Component Grid -->
     <section class="courses-section" id="courses">
         <h2 class="section-title">Our Professional Programs</h2>
         <div class="section-subtitle">Select from our range of government-compliant technical certifications</div>
         <div class="course-grid">
             
-            <!-- PGDCA -->
             <div class="course-card">
                 <span class="course-badge">12 Months</span>
                 <div class="course-body">
@@ -405,7 +397,6 @@
                 </div>
             </div>
 
-            <!-- ADCA -->
             <div class="course-card">
                 <span class="course-badge">12 Months</span>
                 <div class="course-body">
@@ -418,7 +409,6 @@
                 </div>
             </div>
 
-            <!-- DCA -->
             <div class="course-card">
                 <span class="course-badge">6 Months</span>
                 <div class="course-body">
@@ -431,7 +421,6 @@
                 </div>
             </div>
 
-            <!-- Tally with GST -->
             <div class="course-card">
                 <span class="course-badge">3 Months</span>
                 <div class="course-body">
@@ -444,7 +433,6 @@
                 </div>
             </div>
 
-            <!-- DTP -->
             <div class="course-card">
                 <span class="course-badge">3 Months</span>
                 <div class="course-body">
@@ -460,7 +448,6 @@
         </div>
     </section>
 
-    <!-- Verification Engine Sandbox Component -->
     <section class="verification-section" id="verification">
         <div class="verify-container">
             <h3>Online Student Verification</h3>
@@ -473,13 +460,11 @@
         </div>
     </section>
 
-    <!-- Secure Local Intake & Enquiry Setup - CONVERTED TO ENGLISH & STYLISH ICONS -->
     <section class="contact-section" id="enquiry">
         <div class="contact-container">
-            <!-- Form Box Left -->
             <div class="enquiry-form">
                 <h3>Admission & Career Counselling Intake</h3>
-                <form action="#" method="POST" autocomplete="off">
+                <form action="#" method="GET" onsubmit="sendToWhatsApp(event)" autocomplete="off">
                     <div class="form-group">
                         <label for="name">Full Candidate Name</label>
                         <input type="text" id="name" required placeholder="Enter candidate's full name">
@@ -503,7 +488,6 @@
                 </form>
             </div>
             
-            <!-- Address Box Right (English and Stylish Upgrades) -->
             <div class="contact-info">
                 <h3>Institutional Communication Desk</h3>
                 <p>You can securely confirm your batch allotment by visiting our campus helpdesk or directly contacting our support team via phone or email.</p>
@@ -525,7 +509,6 @@
         </div>
     </section>
 
-    <!-- Corporate Footer Base Setup -->
     <footer>
         <div class="footer-container">
             <div class="footer-col">
@@ -550,12 +533,10 @@
         </div>
     </footer>
 
-    <!-- Instant WhatsApp Messaging Interface Widget -->
     <a href="https://wa.me/917637022068?text=Hello%20Gyanam%20Academy,%20I%20want%20to%20enquire%20about%20admissions." class="whatsapp-widget" target="_blank" rel="noopener noreferrer">
         ✉
     </a>
 
-    <!-- Verification Log Mock Scripts Execution Framework -->
     <script>
         function checkCertificate() {
             var rollInput = document.getElementById('roll-input').value.trim();
@@ -576,6 +557,21 @@
                 resultBox.innerText = "❌ Verification Failed: Provided credentials do not match active registry logs.";
             }
             resultBox.style.display = "block";
+        }
+
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var course = document.getElementById('course').value;
+            
+            var message = "Hello Gyanam Academy, New Admission Enquiry:%0A" + 
+                          "👤 Name: " + encodeURIComponent(name) + "%0A" + 
+                          "📞 Phone: " + encodeURIComponent(phone) + "%0A" + 
+                          "🎓 Course: " + encodeURIComponent(course);
+                          
+            var whatsappURL = "https://wa.me/917637022068?text=" + message;
+            window.open(whatsappURL, '_blank');
         }
     </script>
 </body>
