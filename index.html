@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <title>Gyanam Academy | Premier Computer Institute</title>
+    <!-- Google Fonts for Modern & Stylish Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -257,6 +258,17 @@
         .btn-submit { width: 100%; background: #1e3a8a; color: white; padding: 14px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 16px; transition: background 0.3s; }
         .btn-submit:hover { background: #0f172a; }
         
+        /* Form Submit Status Messages */
+        #form-status {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 6px;
+            display: none;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+        }
+
         /* Stylish Upgrade for Contact Info Block */
         .contact-info { 
             padding: 20px 10px; 
@@ -322,10 +334,12 @@
 </head>
 <body>
 
+    <!-- Dynamic Notification Sticky Header -->
     <div class="top-bar">
         ⚡ SPECIAL ADMISSION CAMPAIGN: GET 30% OFF ON ALL COMPUTER DIPLOMA COURSES FOR A LIMITED TIME!
     </div>
 
+    <!-- Header Navigation Panel -->
     <header>
         <div class="nav-container">
             <div class="logo">
@@ -344,6 +358,7 @@
         </div>
     </header>
 
+    <!-- Premium Hero Branding Section -->
     <section class="hero">
         <div class="hero-content">
             <h2>Tihu's Leading Computer Training Academy</h2>
@@ -365,6 +380,7 @@
         </div>
     </section>
 
+    <!-- Core Badges Pillars Section -->
     <section class="features">
         <div class="feat-card">
             <h3>Government Recognized</h3>
@@ -380,11 +396,13 @@
         </div>
     </section>
 
+    <!-- Standard Curricular Courses Component Grid -->
     <section class="courses-section" id="courses">
         <h2 class="section-title">Our Professional Programs</h2>
         <div class="section-subtitle">Select from our range of government-compliant technical certifications</div>
         <div class="course-grid">
             
+            <!-- PGDCA -->
             <div class="course-card">
                 <span class="course-badge">12 Months</span>
                 <div class="course-body">
@@ -397,6 +415,7 @@
                 </div>
             </div>
 
+            <!-- ADCA -->
             <div class="course-card">
                 <span class="course-badge">12 Months</span>
                 <div class="course-body">
@@ -409,6 +428,7 @@
                 </div>
             </div>
 
+            <!-- DCA -->
             <div class="course-card">
                 <span class="course-badge">6 Months</span>
                 <div class="course-body">
@@ -421,6 +441,7 @@
                 </div>
             </div>
 
+            <!-- Tally with GST -->
             <div class="course-card">
                 <span class="course-badge">3 Months</span>
                 <div class="course-body">
@@ -433,6 +454,7 @@
                 </div>
             </div>
 
+            <!-- DTP -->
             <div class="course-card">
                 <span class="course-badge">3 Months</span>
                 <div class="course-body">
@@ -448,6 +470,7 @@
         </div>
     </section>
 
+    <!-- Verification Engine Sandbox Component -->
     <section class="verification-section" id="verification">
         <div class="verify-container">
             <h3>Online Student Verification</h3>
@@ -460,22 +483,30 @@
         </div>
     </section>
 
+    <!-- Secure Local Intake & Enquiry Setup - DIRECT ASYNC EMAIL SYSTEM WITH WEB3FORMS -->
     <section class="contact-section" id="enquiry">
         <div class="contact-container">
+            <!-- Form Box Left -->
             <div class="enquiry-form">
                 <h3>Admission & Career Counselling Intake</h3>
-                <form action="#" method="GET" onsubmit="sendToWhatsApp(event)" autocomplete="off">
+                <form id="academy-form" method="POST" autocomplete="off">
+                    
+                    <!-- Web3Forms Config Key -->
+                    <input type="hidden" name="access_key" value="b9d78820-5b00-475a-b6e3-97e21a0980e4">
+                    <input type="hidden" name="subject" value="New Student Admission Inquiry - Gyanam Academy">
+                    <input type="hidden" name="from_name" value="Gyanam Website Engine">
+                    
                     <div class="form-group">
                         <label for="name">Full Candidate Name</label>
-                        <input type="text" id="name" required placeholder="Enter candidate's full name">
+                        <input type="text" name="Candidate Name" id="name" required placeholder="Enter candidate's full name">
                     </div>
                     <div class="form-group">
                         <label for="phone">Active Contact Number</label>
-                        <input type="tel" id="phone" pattern="[0-9]{10}" required placeholder="10-digit mobile line">
+                        <input type="tel" name="Mobile Line" id="phone" pattern="[0-9]{10}" required placeholder="10-digit mobile line">
                     </div>
                     <div class="form-group">
                         <label for="course">Desired Certification Stream</label>
-                        <select id="course" required>
+                        <select name="Selected Course" id="course" required>
                             <option value="" disabled selected>Choose a structural stream</option>
                             <option value="PGDCA">PGDCA (12 Months Diploma)</option>
                             <option value="ADCA">ADCA (12 Months Advanced Course)</option>
@@ -484,10 +515,14 @@
                             <option value="DTP">DTP & Graphic Design (3 Months Creative Course)</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn-submit">Submit Enrolment Request Safely</button>
+                    <button type="submit" class="btn-submit" id="btn-text">Submit Enrolment Request Safely</button>
+                    
+                    <!-- Submission UI Feedback Block -->
+                    <div id="form-status"></div>
                 </form>
             </div>
             
+            <!-- Address Box Right -->
             <div class="contact-info">
                 <h3>Institutional Communication Desk</h3>
                 <p>You can securely confirm your batch allotment by visiting our campus helpdesk or directly contacting our support team via phone or email.</p>
@@ -509,6 +544,7 @@
         </div>
     </section>
 
+    <!-- Corporate Footer Base Setup -->
     <footer>
         <div class="footer-container">
             <div class="footer-col">
@@ -533,10 +569,12 @@
         </div>
     </footer>
 
+    <!-- Instant WhatsApp Messaging Interface Widget -->
     <a href="https://wa.me/917637022068?text=Hello%20Gyanam%20Academy,%20I%20want%20to%20enquire%20about%20admissions." class="whatsapp-widget" target="_blank" rel="noopener noreferrer">
         ✉
     </a>
 
+    <!-- Scripts Execution Framework -->
     <script>
         function checkCertificate() {
             var rollInput = document.getElementById('roll-input').value.trim();
@@ -559,20 +597,60 @@
             resultBox.style.display = "block";
         }
 
-        function sendToWhatsApp(event) {
-            event.preventDefault();
-            var name = document.getElementById('name').value;
-            var phone = document.getElementById('phone').value;
-            var course = document.getElementById('course').value;
+        // Seamless AJAX Submission Engine
+        const form = document.getElementById('academy-form');
+        const statusBox = document.getElementById('form-status');
+        const submitBtn = document.getElementById('btn-text');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            var message = "Hello Gyanam Academy, New Admission Enquiry:%0A" + 
-                          "👤 Name: " + encodeURIComponent(name) + "%0A" + 
-                          "📞 Phone: " + encodeURIComponent(phone) + "%0A" + 
-                          "🎓 Course: " + encodeURIComponent(course);
-                          
-            var whatsappURL = "https://wa.me/917637022068?text=" + message;
-            window.open(whatsappURL, '_blank');
-        }
+            submitBtn.innerText = "Processing Transmission...";
+            submitBtn.disabled = true;
+            
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let res = await response.json();
+                if (response.status == 200) {
+                    statusBox.style.display = "block";
+                    statusBox.style.background = "#dcfce7";
+                    statusBox.style.color = "#15803d";
+                    statusBox.style.border = "1px solid #bbf7d0";
+                    statusBox.innerText = "✔ Your enquiry has been safely transmitted directly to our database desk!";
+                    form.reset();
+                } else {
+                    statusBox.style.display = "block";
+                    statusBox.style.background = "#fee2e2";
+                    statusBox.style.color = "#b91c1c";
+                    statusBox.style.border = "1px solid #fecaca";
+                    statusBox.innerText = "Server Error: " + res.message;
+                }
+            })
+            .catch(error => {
+                statusBox.style.display = "block";
+                statusBox.style.background = "#fee2e2";
+                statusBox.style.color = "#b91c1c";
+                statusBox.innerText = "Network Error. Please verify connection metrics.";
+            })
+            .then(() => {
+                submitBtn.innerText = "Submit Enrolment Request Safely";
+                submitBtn.disabled = false;
+                setTimeout(() => {
+                    statusBox.style.display = "none";
+                }, 7000);
+            });
+        });
     </script>
 </body>
 </html>
